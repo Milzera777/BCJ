@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Assistência Técnica Especializada</title>
-  <link rel="icon" href="file:///C:/Users/MIL/OneDrive/Imagens/logo-bcj.png.png" type="image/png">
+  <link rel="icon" href="assets\logo..bcj.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
   <style>
@@ -320,12 +320,25 @@
         font-size: 0.8rem;
         padding: 15px;
       }
+      /* Responsividade */
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem 0;
+        }
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo..bcj.png" alt="Logo BCJ">
+    <img src="assets/logo..bcj.png" alt="Logo BCJ">
     <h1><i class="fas fa-tools"></i> BCJ Impressoras</h1>
     <p>Especialistas em conserto e manutenção de impressoras e computadores</p>
     <button class="toggle-btn" onclick="document.getElementById('sobre').scrollIntoView({ behavior: 'smooth' })">Iniciar</button>
@@ -334,10 +347,25 @@
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
+    <a href="#aluguel">Aluguel</a>
     <a href="#contato">Contato</a>
   </nav>
 
-  <section id="sobre">
+  <section id="Sobre">
+    <h2>Sobre Nós</h2>
+    <p>
+      Uma empresa focada na prestação de serviços de manutenção preventiva e corretiva em equipamentos de informática, é especializada em soluções de outsourcing de impressão, oferecendo serviços completos para a gestão eficiente de parques de impressão corporativo.
+    </p>
+    <p>
+      Atuamos com foco na redução de custos, aumento da produtividade e sustentabilidade, por meio da terceirização de equipamentos, suprimentos, manutenção e monitoramento remoto.
+    </p>
+    <p>
+      Com tecnologia de ponta, suporte técnico ágil e consultoria personalizada, ajudamos empresas de todos os portes a otimizarem seus processos de impressão e digitalização de documentos. Nosso compromisso é garantir maior controle, segurança da informação e eficiência operacional para que nossos clientes possam concentrar seus recursos em atividades estratégicas do negócio.
+    </p>
+  </section>
+
+
+  <section id="quem-somos" class="visible">
     <h2>Quem somos</h2>
     <p>Com mais de uma década de experiência, somos especialistas em oferecer soluções ágeis e eficientes para impressoras, computadores e manutenção técnica...</p>
     <div class="cards">
@@ -365,9 +393,9 @@
       <li>Atendimento em domicílio para empresas</li>
     </ul>
     <div class="gif-container">
-      <img src="Reparo impressora .png" alt="Reparo impressora">
-      <img src="chat.pt.png" alt="Manutenção de PC">
-      <img src="escritoriomulher.avif" alt="Técnico trabalhando">
+      <img src="assets/Reparo impressora .png" alt="Reparo impressora">
+      <img src="assets/chat.pt.png" alt="Manutenção de PC">
+      <img src="assets/escritoriomulher.avif" alt="Técnico trabalhando">
     </div>
   </section>
 
@@ -394,32 +422,41 @@
     </p>
   </section>
 
-  <section id="Sobre nós">
-    <h2>Sobre Nós</h2>
-    <p>
-      Uma empresa focada na prestação de serviços de manutenção preventiva e corretiva em equipamentos de informática, é especializada em soluções de outsourcing de impressão, oferecendo serviços completos para a gestão eficiente de parques de impressão corporativo.
-    </p>
-    <p>
-      Atuamos com foco na redução de custos, aumento da produtividade e sustentabilidade, por meio da terceirização de equipamentos, suprimentos, manutenção e monitoramento remoto.
-    </p>
-    <p>
-      Com tecnologia de ponta, suporte técnico ágil e consultoria personalizada, ajudamos empresas de todos os portes a otimizarem seus processos de impressão e digitalização de documentos. Nosso compromisso é garantir maior controle, segurança da informação e eficiência operacional para que nossos clientes possam concentrar seus recursos em atividades estratégicas do negócio.
-    </p>
-  </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p><i class="fas fa-envelope"></i> Email: ballyhoocopiadoras@gmail.com </p>
-    <p><i class="fas fa-phone-alt"></i> Telefone: (11) 5068-1370</p>
-    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua Sussurana 103, Ipiranga, São Paulo - 04281070</p>
+    <p>
+        <a href="mailto:ballyhoocopiadoras@gmail.com" target="_blank" rel="noopener noreferrer" class="contato-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+            </svg>
+            Email: ballyhoocopiadoras@gmail.com
+        </a>
+    </p>
+    <p>
+        <a href="tel:+551150681370" class="contato-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M6.62 10.79c1.06 1.06 2.45 1.64 3.88 1.64s2.82-.58 3.88-1.64l-2.12-2.12c-.78.78-1.81 1.21-2.88 1.21s-2.11-.43-2.88-1.21l-2.12 2.12zM18 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6V6h12v12z"/>
+            </svg>
+            Telefone: +55 (11) 5068-1370
+        </a>
+    </p>
+    <p>
+        <a href="https://www.google.com/maps/place/Rua+Sussurana,+103+-+Ipiranga,+S%C3%A3o+Paulo+-+SP,+04281-070/@-23.603123,-46.606123,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5b2f8c8e7d9:0x7f8c8e7d9f8c8e7d!8m2!3d-23.603123!4d-46.604934!16s%2Fg%2F11c1q5l5v" target="_blank" rel="noopener noreferrer" class="contato-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4V7z"/>
+            </svg>
+            <i>Localização:</i> Rua Sussurana, 103 - Ipiranga, São Paulo - SP, CEP: 04281-070
+        </a>
+    </p>
   </section>
 
   <footer>
     <p>&copy; 2025 - Todos os direitos reservados | Alunos UNINOVE.</p>
   </footer>
 
-  <a href="https://api.whatsapp.com/send/?phone=551150681370&text&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  <a href="https://api.whatsapp.com/send/?phone=551150681370&text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20de%20aluguel%20de%20impressoras.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
   </a>
 
   <a href="https://www.instagram.com/bcj.impressoras/" class="instagram-float" target="_blank">

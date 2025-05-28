@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Soluções de Aluguel - BCJ Impressoras</title>
-  <link rel="icon" href="file:///C:/Users/MIL/OneDrive/Imagens/logo-bcj.png.png" type="image/png">
+  <link rel="icon" href="assets/logo..bcj.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
   <style>
@@ -435,7 +435,7 @@
 <a href="Principal.html" class="back-btn">Voltar ao Site Principal</a>
 
 
-    <img src="logo..bcj.png" alt="Logo BCJ">
+    <img src="assets/logo..bcj.png" alt="Logo BCJ">
     <h1> Soluções de Aluguel</h1>
     <p>Impressoras profissionais com suporte completo e manutenção inclusa</p>
     <button class="toggle-btn" onclick="document.getElementById('impressoras').scrollIntoView({ behavior: 'smooth' })">Ver Impressoras</button>
@@ -544,11 +544,31 @@
   </section>
 
   <section id="contato">
-    <h2>Entre em Contato</h2>
-    <p><i class="fas fa-envelope"></i> Email: ballyhoocopiadoras@gmail.com</p>
-    <p><i class="fas fa-phone-alt"></i> Telefone: (11) 5068-1370</p>
-    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua Sussurana 103, Ipiranga, São Paulo - 04281070</p>
-    <p style="margin-top: 20px;">Solicite um orçamento personalizado e descubra como nossas soluções de aluguel podem otimizar os processos da sua empresa.</p>
+    <h2>Contato</h2>
+    <p>
+        <a href="mailto:ballyhoocopiadoras@gmail.com" target="_blank" rel="noopener noreferrer" class="contato-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+            </svg>
+            Email: ballyhoocopiadoras@gmail.com
+        </a>
+    </p>
+    <p>
+        <a href="tel:+551150681370" class="contato-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M6.62 10.79c1.06 1.06 2.45 1.64 3.88 1.64s2.82-.58 3.88-1.64l-2.12-2.12c-.78.78-1.81 1.21-2.88 1.21s-2.11-.43-2.88-1.21l-2.12 2.12zM18 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6V6h12v12z"/>
+            </svg>
+            Telefone: +55 (11) 5068-1370
+        </a>
+    </p>
+    <p>
+        <a href="https://www.google.com/maps/place/Rua+Sussurana,+103+-+Ipiranga,+S%C3%A3o+Paulo+-+SP,+04281-070/@-23.603123,-46.606123,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5b2f8c8e7d9:0x7f8c8e7d9f8c8e7d!8m2!3d-23.603123!4d-46.604934!16s%2Fg%2F11c1q5l5v" target="_blank" rel="noopener noreferrer" class="contato-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4V7z"/>
+            </svg>
+            <i>Localização:</i> Rua Sussurana, 103 - Ipiranga, São Paulo - SP, CEP: 04281-070
+        </a>
+    </p>
   </section>
 
   <footer>
@@ -563,70 +583,65 @@
     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
   </a>
 
-  <script>
-    function showDetails(printerName) {
-      const details = {
-        'HP LaserJet Pro M404': {
-          features: ['Velocidade: 38 páginas por minuto', 'Resolução: 4800 x 600 dpi', 'Conectividade: Wi-Fi, USB, Ethernet', 'Memória: 256 MB', 'Duplex automático', 'Bandeja: 250 folhas'],
-          price: 'A partir de R$ 89/mês',
-          ideal: 'Ideal para: Escritórios corporativos com alta demanda'
-        },
-        'Brother DCP-L2540DW': {
-          features: ['Multifuncional 3 em 1', 'Wi-Fi integrado', 'Impressão duplex automática', 'Tela LCD de 2 linhas', 'Velocidade: 26 ppm', 'Scanner colorido'],
-          price: 'A partir de R$ 79/mês',
-          ideal: 'Ideal para: Escritórios pequenos e médios'
-        },
-        'Epson EcoTank L3250': {
-          features: ['Sistema EcoTank (tanque de tinta)', 'Impressão colorida de alta qualidade', 'Wi-Fi Direct', 'Baixíssimo custo por página', 'Multifuncional', 'Até 4.500 páginas em preto'],
-          price: 'A partir de R$ 69/mês',
-          ideal: 'Ideal para: Alta demanda de impressão colorida'
+    <script>
+        function showDetails(printerName) {
+            const details = {
+                'HP LaserJet Pro M404': {
+                    features: ['Velocidade: 38 páginas por minuto', 'Resolução: 4800 x 600 dpi', 'Conectividade: Wi-Fi, USB, Ethernet', 'Memória: 256 MB', 'Duplex automático', 'Bandeja: 250 folhas'],
+                    price: 'A partir de R$ 89/mês',
+                    ideal: 'Ideal para: Escritórios corporativos com alta demanda'
+                },
+                'Brother DCP-L2540DW': {
+                    features: ['Multifuncional 3 em 1', 'Wi-Fi integrado', 'Impressão duplex automática', 'Tela LCD de 2 linhas', 'Velocidade: 26 ppm', 'Scanner colorido'],
+                    price: 'A partir de R$ 79/mês',
+                    ideal: 'Ideal para: Escritórios pequenos e médios'
+                },
+                'Epson EcoTank L3250': {
+                    features: ['Sistema EcoTank (tanque de tinta)', 'Impressão colorida de alta qualidade', 'Wi-Fi Direct', 'Baixíssimo custo por página', 'Multifuncional', 'Até 4.500 páginas em preto'],
+                    price: 'A partir de R$ 69/mês',
+                    ideal: 'Ideal para: Alta demanda de impressão colorida'
+                }
+            };
+
+            const printer = details[printerName];
+            if (printer) {
+                alert(`${printerName}\n\n${printer.ideal}\n\nCaracterísticas principais:\n• ${printer.features.join('\n• ')}\n\n💰 ${printer.price}\n\n📞 Entre em contato para mais informações e condições especiais!`);
+            }
         }
-      };
-
-      const printer = details[printerName];
-      if (printer) {
-        alert(`${printerName}\n\n${printer.ideal}\n\nCaracterísticas principais:\n• ${printer.features.join('\n• ')}\n\n💰 ${printer.price}\n\n📞 Entre em contato para mais informações e condições especiais!`);
-      }
-    }
-
-    function contactPlan(planName) {
-      const message = `Olá! Tenho interesse no Plano ${planName} de aluguel de impressoras. Gostaria de receber mais informações sobre valores e condições.`;
-      const whatsappUrl = `https://api.whatsapp.com/send/?phone=551150681370&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
-      window.open(whatsappUrl, '_blank');
-    }
-
-    function goBack() {
-      if (confirm('Deseja retornar ao site principal da BCJ Impressoras?')) {
-        // Substitua pelo link real do seu site principal
-        window.history.back(); // ou window.location.href = 'index.html';
-      }
-    }
-
-    // Observador de interseção para animações
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+        function contactPlan(planName) {
+            const message = `Olá! Tenho interesse no Plano ${planName} de aluguel de impressoras. Gostaria de receber mais informações sobre valores e condições.`;
+            const whatsappUrl = `https://wa.me/551150681370?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
         }
-      });
-    }, {
-      threshold: 0.1
-    });
 
-    // Aplicar observer a todos os elementos animáveis
-    document.querySelectorAll('section, .card, .feature').forEach(el => {
-      observer.observe(el);
-    });
+        function goBack() {
+            if (confirm('Deseja retornar ao site principal da BCJ Impressoras?')) {
+                window.location.href = 'index.html';
+            }
+        }
 
-    // Animação escalonada dos cards ao carregar
-    document.addEventListener('DOMContentLoaded', function() {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.style.transitionDelay = `${index * 0.1}s`;
-        }, 100);
-      });
-    });
-  </script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('section, .card, .feature').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transitionDelay = `${index * 0.1}s`;
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>
