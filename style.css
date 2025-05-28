@@ -1,0 +1,696 @@
+/* style.css - Arquivo CSS Unificado para todas as páginas */
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais do Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ------------------------------------- */
+/* Estilos do HEADER (Padrão para Index.html) */
+/* ------------------------------------- */
+header {
+    background-color: #111111; /* Cor para index.html */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    border-bottom: 1px solid #333333;
+    display: flex; /* Para flexbox em telas menores, mas funciona bem no desktop */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo específico para header da página de aluguel e devs (cores diferentes) */
+.header-aluguel-devs {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #333;
+}
+
+/* Estilo do botão "Voltar" (específico para páginas secundárias) */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.back-btn::before {
+    content: '←';
+    font-size: 18px;
+}
+
+header img {
+    height: 80px;
+    vertical-align: middle;
+    margin-right: 15px; /* Manter para desktop na página principal */
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    /* Remover gradiente para h1 da página principal */
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: inherit;
+    color: white; /* Garante que a cor seja branca */
+}
+
+/* Gradiente para h1 da página de aluguel/devs */
+.header-aluguel-devs h1 {
+    background: linear-gradient(45deg, #fff, #f0f8ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+/* Cor do parágrafo do header da página de aluguel/devs (se precisar de diferença) */
+.header-aluguel-devs p {
+    opacity: 0.9;
+}
+
+/* Botão "Iniciar" no Header da Página Principal */
+.toggle-btn {
+    background: #333333;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.toggle-btn:hover {
+    background: #555555;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------- */
+/* Estilos da NAVEGAÇÃO */
+/* ------------------------------------- */
+nav {
+    background-color: #222222; /* Cor para index.html */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #444444;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Cor da navegação para página de aluguel e devs */
+.nav-aluguel-devs {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: color 0.3s ease, transform 0.3s;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: #cccccc;
+    transform: translateY(-2px);
+}
+
+/* Hover específico para nav-aluguel-devs */
+.nav-aluguel-devs a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------------- */
+/* Estilos de SEÇÃO GERAIS */
+/* ------------------------------------- */
+section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ------------------------------------- */
+/* Estilos de CARDS (Página Principal) */
+/* ------------------------------------- */
+.cards { /* Usado na página principal (quem somos/aluguel temporário) */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card { /* Usado na página principal */
+    background: #111111;
+    padding: 20px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.visible { /* Usado na página principal */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover { /* Usado na página principal */
+    box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+    transform: translateY(-5px);
+    border-color: #555555;
+}
+
+.card img { /* Usado na página principal */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------- */
+/* Estilos de CARDS (Página de Aluguel) */
+/* ------------------------------------- */
+.cards-aluguel {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px; /* Adicionado para consistência */
+}
+.card-aluguel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.card-aluguel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.6s;
+}
+.card-aluguel:hover::before {
+    left: 100%;
+}
+.card-aluguel.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-aluguel:hover {
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.card-aluguel img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+.card-aluguel:hover img {
+    transform: scale(1.05);
+}
+.card-aluguel h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.card-aluguel p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+.btn-detalhes { /* Botão de detalhes na página de aluguel */
+    background: linear-gradient(45deg, #444, #666);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+.btn-detalhes:hover {
+    background: linear-gradient(45deg, #666, #888);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* ------------------------------------- */
+/* Estilos de FEATURES (Página de Aluguel) */
+/* ------------------------------------- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+.feature {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.feature:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+    color: #fff;
+}
+.feature h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* ------------------------------------- */
+/* Estilos de GIF CONTAINER (Página Principal) */
+/* ------------------------------------- */
+.gif-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.gif-container img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease-out;
+    border: 1px solid #333333;
+}
+.gif-container img.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ------------------------------------- */
+/* Estilos de LISTAS (Geral) */
+/* ------------------------------------- */
+ul {
+    margin-left: 20px;
+    list-style: disc;
+    line-height: 1.8;
+    color: #cccccc; /* Cor padrão para listas na página principal */
+}
+
+/* Listas sem marcadores para tech-stack e dev-contact */
+.tech-stack ul, .dev-contact ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-left: 0; /* Remover margem extra de ul padrão */
+}
+
+.tech-stack li, .dev-contact li {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------- */
+/* Estilos do FOOTER (Padrão para Index.html) */
+/* ------------------------------------- */
+footer {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 1px solid #333333;
+}
+
+/* Footer da página de aluguel e devs (padding e margin-top diferentes) */
+.footer-aluguel-devs {
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+/* ------------------------------------- */
+/* Estilos de BOTÕES FLUTUANTES (Padrão para Index.html) */
+/* ------------------------------------- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    background-color: #333333; /* Cor para index.html */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+    transition: transform 0.3s;
+    border: 1px solid #555555;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #555555; /* Manter a cor ao hover na página principal */
+}
+
+/* WhatsApp Float para página de aluguel e devs */
+.whatsapp-float-aluguel-devs {
+    background-color: #25D366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    border: none;
+}
+.whatsapp-float-aluguel-devs:hover {
+    background-color: #25D366; /* Manter a cor principal do WhatsApp ao hover */
+}
+
+
+.instagram-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 95px;
+    z-index: 1000;
+    background-color: #333333; /* Cor para index.html */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+    transition: transform 0.3s;
+    border: 1px solid #555555;
+}
+
+.instagram-float:hover {
+    transform: scale(1.1);
+    background-color: #555555; /* Manter a cor ao hover na página principal */
+}
+
+/* Instagram Float para página de aluguel e devs */
+.instagram-float-aluguel-devs {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    box-shadow: 0 4px 15px rgba(188, 24, 136, 0.4);
+    border: none;
+}
+.instagram-float-aluguel-devs:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); /* Manter a cor principal do Instagram ao hover */
+}
+
+.whatsapp-float img, .instagram-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* ------------------------------------- */
+/* Estilos de LINKS DE CONTATO (SVG) */
+/* ------------------------------------- */
+.contato-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-link:hover {
+    color: #cccccc;
+}
+
+/* Ajuste para ícones SVG dentro de .contato-link */
+.contato-link svg {
+    fill: #ffffff; /* Força o preenchimento branco para os SVGs nos links de contato */
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+
+/* ------------------------------------- */
+/* Estilos da ÁREA DE DEVS */
+/* ------------------------------------- */
+.dev-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.dev-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.dev-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dev-card:hover {
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.dev-card img.dev-profile {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.dev-card img.dev-profile:hover {
+    transform: scale(1.1);
+}
+
+.dev-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.dev-card p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.dev-social-links a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.dev-social-links a:hover {
+    color: #007bff; /* Exemplo de cor para LinkedIn ou outra rede social */
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------- */
+/* Animações (Keyframes) */
+/* ------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------- */
+/* MEDIA QUERIES PARA RESPONSIVIDADE APRIMORADA */
+/* ------------------------------------- */
+
+/* Para telas de até 992px (tablets maiores, laptops pequenos) */
+@media (max-width: 992px) {
+    header { padding: 50px 15px; }
+    header h1 { font-size: 2.2rem; }
+    header p { font-size: 1.1rem; }
+    nav { gap: 15px; }
+    section { margin: 50px auto; padding: 0 15px; }
+    h2 { font-size: 1.8rem; }
+
+    /* Grids de cards/features */
+    .cards { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; } /* index.html cards */
+    .cards-aluguel { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; } /* aluguel.html cards */
+    .features { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; } /* aluguel.html features */
+    .dev-cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; } /* devs.html cards */
+    
+    .gif-container img { max-width: 250px; } /* index.html gifs */
+    footer { padding: 25px 15px; }
+}
+
+/* Para telas de até 768px (tablets e smartphones grandes) */
+@media (max-width: 768px) {
+    /* back-btn (só em páginas secundárias) */
+    .back-btn {
+        position: static;
+        margin: 20px auto 0;
+        width: fit-content;
+        display: block;
+        padding: 10px 20px;
+    }
+
+    header {
+        padding: 40px 15px;
+        /* display: flex, flex-direction, align-items já no base para header */
+        text-align: center; /* Garante que o texto esteja centralizado */
+    }
+    header img { margin-right: 0; margin-bottom: 10px; }
+    header h1 { font-size: 2rem; } /* text-align: center; display: block; removido, flexbox já cuida */
+    header p { font-size: 1rem; } /* text-align: center; removido */
+
+    .toggle-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+    nav a { font-size: 1rem; width: 100%; text-align: center; padding: 10px 0; }
+
+    section { margin: 40px auto; padding: 0 15px; }
+    h2 { font-size: 1.6rem; text-align: center; width: 100%; display: block; border-bottom: 3px solid #ffffff; }
+
+    /* Todos os grids caem para uma coluna */
+    .cards, .cards-aluguel, .dev-cards, .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .gif-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gif-container img { max-width: 100%; }
+
+    /* Botões flutuantes */
+    .whatsapp-float, .instagram-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+    }
+    .instagram-float { right: 75px; }
+    .whatsapp-float { right: 15px; }
+    .whatsapp-float img, .instagram-float img { width: 28px; height: 28px; }
+    footer { font-size: 0.8rem; padding: 20px 15px; }
+}
+
+/* Para telas de até 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+    header h1 { font-size: 1.8rem; }
+    header p { font-size: 0.9rem; }
+    h2 { font-size: 1.4rem; }
+
+    /* Padding para todos os cards e features */
+    .card, .card-aluguel, .dev-card, .feature {
+        padding: 20px;
+    }
+    /* Tamanho de fonte para todos os cards e features */
+    .card h3, .card-aluguel h3, .dev-card h3, .feature h3 { font-size: 1.2rem; }
+    .card p, .card-aluguel p, .dev-card p, .feature p { font-size: 0.9rem; }
+
+    /* Botões flutuantes para telas muito pequenas */
+    .whatsapp-float, .instagram-float { width: 45px; height: 45px; bottom: 10px; }
+    .instagram-float { right: 65px; }
+    .whatsapp-float { right: 10px; }
+    .whatsapp-float img, .instagram-float img { width: 25px; height: 25px; }
+}

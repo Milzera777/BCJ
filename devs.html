@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Desenvolvedores - BCJ Impressoras</title>
+    <link rel="icon" href="assets/logo..bcj.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css"/> 
+
+    </head>
+<body>
+    <header class="header-aluguel-devs"> <a href="index.html" class="back-btn">Voltar ao Site Principal</a>
+        <img src="assets/logo..bcj.png" alt="Logo BCJ">
+        <h1>Time de Desenvolvimento</h1>
+        <p>Conheça os alunos que tornaram este projeto possível.</p>
+    </header>
+
+    <nav class="nav-aluguel-devs"> <a href="#nossa-equipe">Nossa Equipe</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#contato-dev">Contato</a>
+    </nav>
+
+    <section id="nossa-equipe" class="visible">
+        <h2>Nossa Equipe</h2>
+        <div class="dev-cards">
+            <div class="dev-card">
+                <img src="https://via.placeholder.com/120/007bff/FFFFFF?text=Dev1" alt="Foto de Perfil do Desenvolvedor 1" class="dev-profile">
+                <h3>Nome do Desenvolvedor 1</h3>
+                <p>Função: Desenvolvedor Front-end</p>
+                <p>Interesses: UI/UX, Animação Web, Acessibilidade.</p>
+                <div class="dev-social-links">
+                    <a href="https://github.com/usuario1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/usuario1" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:email1@example.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <img src="https://via.placeholder.com/120/28a745/FFFFFF?text=Dev2" alt="Foto de Perfil do Desenvolvedor 2" class="dev-profile">
+                <h3>Nome do Desenvolvedor 2</h3>
+                <p>Função: Desenvolvedor Back-end</p>
+                <p>Interesses: APIs, Banco de Dados, Segurança.</p>
+                <div class="dev-social-links">
+                    <a href="https://github.com/usuario2" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/usuario2" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:email2@example.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <img src="https://via.placeholder.com/120/dc3545/FFFFFF?text=Dev3" alt="Foto de Perfil do Desenvolvedor 3" class="dev-profile">
+                <h3>Nome do Desenvolvedor 3</h3>
+                <p>Função: Designer / QA</p>
+                <p>Interesses: Experiência do Usuário, Testes, Novas Tecnologias.</p>
+                <div class="dev-social-links">
+                    <a href="https://github.com/usuario3" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/usuario3" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:email3@example.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologias" class="visible">
+        <h2>Tecnologias Utilizadas</h2>
+        <p>Este projeto foi desenvolvido utilizando as seguintes tecnologias:</p>
+        <div class="tech-stack">
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+                <li>GitHub Pages/Vercel</li>
+                <li>Font Awesome</li>
+                <li>VS Code</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contato-dev" class="visible">
+        <h2>Contato dos Desenvolvedores</h2>
+        <p>Para dúvidas técnicas, sugestões de melhoria ou oportunidades de colaboração:</p>
+        <div class="dev-contact">
+            <ul>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:devs.uninoveteam@example.com" class="contato-link">devs.uninoveteam@example.com</a></li>
+                <li><i class="fas fa-laptop-code"></i> <a href="https://github.com/seu-org-github" target="_blank" class="contato-link">github.com/seu-org-github</a></li>
+            </ul>
+        </div>
+        <p style="margin-top: 20px;">Somos alunos da UNINOVE e este projeto é um resultado do nosso aprendizado e dedicação.</p>
+    </section>
+
+    <footer class="footer-aluguel-devs"> <p>&copy; 2025 - Todos os direitos reservados | Alunos UNINOVE.</p>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send/?phone=551150681370&text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20de%20aluguel%20de%20impressoras.&type=phone_number&app_absent=0" class="whatsapp-float whatsapp-float-aluguel-devs" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <a href="https://www.instagram.com/bcj.impressoras/" class="instagram-float instagram-float-aluguel-devs" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Seletores para elementos animáveis na página de devs
+        document.querySelectorAll('section, .dev-card, .tech-stack ul li').forEach(el => {
+            observer.observe(el);
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.dev-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transitionDelay = `${index * 0.1}s`;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
