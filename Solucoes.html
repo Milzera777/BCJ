@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soluções de Aluguel - BCJ Impressoras</title>
+  <link rel="icon" href="file:///C:/Users/MIL/OneDrive/Imagens/logo-bcj.png.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      border-bottom: 2px solid #333;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .back-btn::before {
+      content: '←';
+      font-size: 18px;
+    }
+
+    header img {
+      height: 80px;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #fff, #f0f8ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .toggle-btn {
+      background: #333333;
+      color: white;
+      padding: 12px 24px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background: #555555;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      color: #ccc;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ffffff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(20px);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+      transition: left 0.6s;
+    }
+
+    .card:hover::before {
+      left: 100%;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+      transform: translateY(-8px) scale(1.02);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    .btn-detalhes {
+      background: linear-gradient(45deg, #444, #666);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+
+    .btn-detalhes:hover {
+      background: linear-gradient(45deg, #666, #888);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      display: block;
+      color: #fff;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style: disc;
+      line-height: 1.8;
+    }
+
+    footer {
+      background-color: #111111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+      border-top: 1px solid #333;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .instagram-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 95px;
+      z-index: 1000;
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(188, 24, 136, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .instagram-float:hover {
+      transform: scale(1.1);
+    }
+
+    .instagram-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .back-btn {
+        position: relative;
+        margin-bottom: 20px;
+        align-self: flex-start;
+      }
+
+      header {
+        padding: 40px 15px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .toggle-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      section {
+        margin: 40px auto;
+        padding: 0 15px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-float, .instagram-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+      }
+
+      .instagram-float {
+        right: 75px;
+      }
+
+      .whatsapp-float {
+        right: 15px;
+      }
+
+      .whatsapp-float img, .instagram-float img {
+        width: 28px;
+        height: 28px;
+      }
+
+      footer {
+        font-size: 0.8rem;
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+<a href="Principal.html" class="back-btn">Voltar ao Site Principal</a>
+
+
+    <img src="logo..bcj.png" alt="Logo BCJ">
+    <h1> Soluções de Aluguel</h1>
+    <p>Impressoras profissionais com suporte completo e manutenção inclusa</p>
+    <button class="toggle-btn" onclick="document.getElementById('impressoras').scrollIntoView({ behavior: 'smooth' })">Ver Impressoras</button>
+  </header>
+
+  <nav>
+    <a href="#impressoras">Impressoras</a>
+    <a href="#vantagens">Vantagens</a>
+    <a href="#planos">Planos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="impressoras">
+    <h2>Impressoras Disponíveis para Aluguel</h2>
+    <p>Equipamentos modernos e confiáveis para atender às necessidades do seu negócio, com suporte técnico especializado e manutenção preventiva inclusa.</p>
+    
+    <div class="cards">
+      <div class="card" onclick="showDetails('HP LaserJet Pro M404')">
+        <img src="https://gestpar.tomazzoni.net/wp-content/uploads/2020/03/HPLaserJetProM404dw-1.png" alt="HP LaserJet Pro M404">
+        <h3>HP LaserJet Pro M404</h3>
+        <p>Impressão rápida e confiável, ideal para ambientes corporativos de médio porte. Velocidade de até 38 ppm com qualidade profissional.</p>
+        <button class="btn-detalhes">Ver Detalhes</button>
+      </div>
+
+      <div class="card" onclick="showDetails('Brother DCP-L2540DW')">
+        <img src="https://fujiokadistribuidor.vteximg.com.br/arquivos/ids/346360" alt="Brother DCP-L2540DW">
+        <h3>Brother DCP-L2540DW</h3>
+        <p>Multifuncional com Wi-Fi integrado. Imprime, copia e digitaliza com excelente qualidade. Perfeita para escritórios modernos.</p>
+        <button class="btn-detalhes">Ver Detalhes</button>
+      </div>
+
+      <div class="card" onclick="showDetails('Epson EcoTank L3250')">
+        <img src="https://m.media-amazon.com/images/I/51T-6cdhyaL.jpg" alt="Epson EcoTank L3250">
+        <h3>Epson EcoTank L3250</h3>
+        <p>Sistema de tanque de tinta com baixíssimo custo por página. Ideal para empresas com alta demanda de impressão colorida.</p>
+        <button class="btn-detalhes">Ver Detalhes</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="vantagens">
+    <h2>Vantagens do Aluguel</h2>
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon"><i class="fas fa-rocket"></i></span>
+        <h3>Instalação Rápida</h3>
+        <p>Configuração completa em até 24 horas com suporte técnico especializado</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon"><i class="fas fa-tools"></i></span>
+        <h3>Manutenção Inclusa</h3>
+        <p>Manutenção preventiva e corretiva sem custos adicionais</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon"><i class="fas fa-headset"></i></span>
+        <h3>Suporte 24/7</h3>
+        <p>Assistência técnica sempre disponível quando você precisar</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon"><i class="fas fa-dollar-sign"></i></span>
+        <h3>Economia Garantida</h3>
+        <p>Sem investimento inicial e custos previsíveis mensais</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos">
+    <h2>Nossos Planos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Plano Básico</h3>
+        <p><strong>A partir de R$ 69/mês</strong></p>
+        <ul style="text-align: left; margin: 15px 0;">
+          <li>Impressora EcoTank L3250</li>
+          <li>Manutenção inclusa</li>
+          <li>Suporte técnico</li>
+          <li>Até 500 páginas/mês</li>
+        </ul>
+        <button class="btn-detalhes" onclick="contactPlan('Básico')">Contratar</button>
+      </div>
+
+      <div class="card">
+        <h3>Plano Profissional</h3>
+        <p><strong>A partir de R$ 79/mês</strong></p>
+        <ul style="text-align: left; margin: 15px 0;">
+          <li>Brother DCP-L2540DW</li>
+          <li>Multifuncional completo</li>
+          <li>Wi-Fi integrado</li>
+          <li>Até 1000 páginas/mês</li>
+        </ul>
+        <button class="btn-detalhes" onclick="contactPlan('Profissional')">Contratar</button>
+      </div>
+
+      <div class="card">
+        <h3>Plano Corporativo</h3>
+        <p><strong>A partir de R$ 89/mês</strong></p>
+        <ul style="text-align: left; margin: 15px 0;">
+          <li>HP LaserJet Pro M404</li>
+          <li>Alta velocidade (38 ppm)</li>
+          <li>Conectividade completa</li>
+          <li>Páginas ilimitadas</li>
+        </ul>
+        <button class="btn-detalhes" onclick="contactPlan('Corporativo')">Contratar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <p><i class="fas fa-envelope"></i> Email: ballyhoocopiadoras@gmail.com</p>
+    <p><i class="fas fa-phone-alt"></i> Telefone: (11) 5068-1370</p>
+    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua Sussurana 103, Ipiranga, São Paulo - 04281070</p>
+    <p style="margin-top: 20px;">Solicite um orçamento personalizado e descubra como nossas soluções de aluguel podem otimizar os processos da sua empresa.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BCJ Impressoras - Soluções de Aluguel | Todos os direitos reservados</p>
+  </footer>
+
+  <a href="https://api.whatsapp.com/send/?phone=551150681370&text=Olá! Gostaria de saber mais sobre as soluções de aluguel de impressoras.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://www.instagram.com/bcj.impressoras/" class="instagram-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
+
+  <script>
+    function showDetails(printerName) {
+      const details = {
+        'HP LaserJet Pro M404': {
+          features: ['Velocidade: 38 páginas por minuto', 'Resolução: 4800 x 600 dpi', 'Conectividade: Wi-Fi, USB, Ethernet', 'Memória: 256 MB', 'Duplex automático', 'Bandeja: 250 folhas'],
+          price: 'A partir de R$ 89/mês',
+          ideal: 'Ideal para: Escritórios corporativos com alta demanda'
+        },
+        'Brother DCP-L2540DW': {
+          features: ['Multifuncional 3 em 1', 'Wi-Fi integrado', 'Impressão duplex automática', 'Tela LCD de 2 linhas', 'Velocidade: 26 ppm', 'Scanner colorido'],
+          price: 'A partir de R$ 79/mês',
+          ideal: 'Ideal para: Escritórios pequenos e médios'
+        },
+        'Epson EcoTank L3250': {
+          features: ['Sistema EcoTank (tanque de tinta)', 'Impressão colorida de alta qualidade', 'Wi-Fi Direct', 'Baixíssimo custo por página', 'Multifuncional', 'Até 4.500 páginas em preto'],
+          price: 'A partir de R$ 69/mês',
+          ideal: 'Ideal para: Alta demanda de impressão colorida'
+        }
+      };
+
+      const printer = details[printerName];
+      if (printer) {
+        alert(`${printerName}\n\n${printer.ideal}\n\nCaracterísticas principais:\n• ${printer.features.join('\n• ')}\n\n💰 ${printer.price}\n\n📞 Entre em contato para mais informações e condições especiais!`);
+      }
+    }
+
+    function contactPlan(planName) {
+      const message = `Olá! Tenho interesse no Plano ${planName} de aluguel de impressoras. Gostaria de receber mais informações sobre valores e condições.`;
+      const whatsappUrl = `https://api.whatsapp.com/send/?phone=551150681370&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    function goBack() {
+      if (confirm('Deseja retornar ao site principal da BCJ Impressoras?')) {
+        // Substitua pelo link real do seu site principal
+        window.history.back(); // ou window.location.href = 'index.html';
+      }
+    }
+
+    // Observador de interseção para animações
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Aplicar observer a todos os elementos animáveis
+    document.querySelectorAll('section, .card, .feature').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Animação escalonada dos cards ao carregar
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.transitionDelay = `${index * 0.1}s`;
+        }, 100);
+      });
+    });
+  </script>
+</body>
+</html>
