@@ -90,7 +90,6 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     background: none;
-    -webkit-background-clip: unset;
     -webkit-text-fill-color: inherit;
     color: white; /* Garante que a cor seja branca */
 }
@@ -147,12 +146,12 @@ nav {
     gap: 20px;
     border-bottom: 1px solid #444444;
     position: sticky;
-    top: 0; /* A navegação gruda no TOPO da viewport */
-    z-index: 999; /* Garante que a nav fique acima do conteúdo */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para a navegação sticky */
+    top: 0;
+    z-index: 999; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
 }
 
-/* Cor da navegação para página de aluguel e devs */
+
 .nav-aluguel-devs {
     background-color: #1a1a1a;
     border-bottom: 1px solid #333;
@@ -172,7 +171,7 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* Hover específico para nav-aluguel-devs */
+
 .nav-aluguel-devs a:hover {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -182,12 +181,12 @@ nav a:hover {
 /* ------------------------------------- */
 section {
     max-width: 1100px;
-    margin: 60px auto; /* Espaçamento entre as seções */
-    padding: 40px 30px; /* Padding interno das seções */
-    background: #111111; /* Fundo escuro para a seção, combinando com o tema */
-    border: 1px solid #333333; /* Borda para a seção */
-    border-radius: 8px; /* Cantos arredondados */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Sombra para destacar a seção */
+    margin: 60px auto; 
+    padding: 40px 30px; 
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 8px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4); 
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -203,15 +202,12 @@ h2 {
     color: #ffffff;
     margin-bottom: 20px;
     border-bottom: 3px solid #ffffff;
-    display: inline-block; /* Mantém o h2 se expandindo apenas com o texto */
+    display: inline-block; 
     padding-bottom: 5px;
-    /* Removido: text-align: center; width: 100%; display: block; */
-    /* Para centralizar o h2 inline-block, podemos usar text-align: center no pai, se necessário. */
-    /* Seções já tem text-align: center para h2, o que vai centralizar o bloco. */
 }
 
 /* ------------------------------------- */
-/* Estilos de CARDS (Página Principal) */
+/* Estilos de CARDS (Página Index.html) */
 /* ------------------------------------- */
 .cards {
     display: grid;
@@ -371,7 +367,7 @@ h2 {
 }
 
 /* ------------------------------------- */
-/* Estilos de GIF CONTAINER (Página Principal) */
+/* Estilos de GIF CONTAINER (Página Index.html) */
 /* ------------------------------------- */
 .gif-container {
     display: flex;
@@ -636,10 +632,6 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ------------------------------------- */
-/* MEDIA QUERIES PARA RESPONSIVIDADE APRIMORADA */
-/* ------------------------------------- */
-
 /* Para telas de até 992px (tablets maiores, laptops pequenos) */
 @media (max-width: 992px) {
     header {
@@ -759,11 +751,7 @@ footer {
     .whatsapp-float { right: 10px; }
     .whatsapp-float img, .instagram-float img { width: 25px; height: 25px; }
 }
-/* ... (seu CSS existente, como o que você forneceu anteriormente) ... */
 
-/* ------------------------------------- */
-/* Estilos do MODAL (Popup) */
-/* ------------------------------------- */
 .modal {
     display: none; /* Escondido por padrão */
     position: fixed; /* Fixo na tela */
@@ -790,17 +778,17 @@ footer {
     width: 90%;
     max-width: 600px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    position: relative; /* Para posicionar o botão de fechar */
-    animation: slideInFromTop 0.4s ease-out; /* Animação do conteúdo */
-    color: #ffffff; /* Cor do texto dentro do modal */
+    position: relative; 
+    animation: slideInFromTop 0.4s ease-out;
+    color: #ffffff; 
 }
 
 .modal-content h2 {
     font-size: 2rem;
-    color: #007bff; /* Cor de destaque para o título */
+    color: #007bff; 
     margin-bottom: 15px;
     text-align: center;
-    border-bottom: 2px solid #333; /* Linha divisória */
+    border-bottom: 2px solid #333; 
     padding-bottom: 10px;
 }
 
@@ -819,13 +807,13 @@ footer {
 }
 
 .modal-content ul {
-    list-style: none; /* Remove bullet points padrão */
+    list-style: none; 
     padding: 0;
     margin-bottom: 20px;
 }
 
 .modal-content ul li {
-    background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil para itens da lista */
+    background-color: rgba(255, 255, 255, 0.05); 
     padding: 8px 15px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -836,7 +824,7 @@ footer {
 .modal-content #modalPrice {
     font-size: 1.4em;
     font-weight: bold;
-    color: #25D366; /* Cor verde para o preço */
+    color: #25D366; 
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -861,7 +849,7 @@ footer {
 }
 
 .modal-contact-btn {
-    background-color: #25D366; /* Verde do WhatsApp */
+    background-color: #25D366; 
     color: white;
     padding: 15px 30px;
     border: none;
@@ -870,16 +858,15 @@ footer {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block; /* Ocupa a largura total */
-    width: fit-content; /* Se você não quer largura total, use fit-content e centralize com margin */
-    margin: 0 auto; /* Centraliza o botão */
+    display: block; 
+    width: fit-content; 
+    margin: 0 auto; 
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .modal-contact-btn:hover {
-    background-color: #1DA851; /* Tom mais escuro de verde */
-    transform: translateY(-2px);
+    background-color: #1DA851; /
 }
 
 /* Animações para o modal */
@@ -894,56 +881,45 @@ footer {
 }
 
 /* ------------------------------------- */
-/* MEDIA QUERIES PARA RESPONSIVIDADE DO MODAL */
-/* ------------------------------------- */
-/* ------------------------------------- */
-/* Estilos do MODAL (Popup) */
-/* ------------------------------------- */
-/* ... (Seus estilos existentes para .modal e .modal-content, que já centralizam o modal-content) ... */
+/* Estilos do MODAL (Popup) */          
+/* ------------------------------------- */ 
 
-/* Exemplo de como seu .modal deve estar para centralizar o conteúdo: */
+
 .modal {
-    display: flex; /* Essencial para centralizar o conteúdo-filho */
-    align-items: center; /* Centraliza verticalmente o modal-content */
-    justify-content: center; /* Centraliza horizontalmente o modal-content */
-    /* ... outras propriedades como position, z-index, background-color, backdrop-filter ... */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+
 }
 
 .modal-content {
-    /* ... suas propriedades de estilo para o background, padding, border, width, max-width, box-shadow ... */
-    text-align: center; /* NOVO: Centraliza todo o texto e elementos inline-block dentro do modal */
+    text-align: center; 
 }
 
 .modal-content ul {
-    /* Para listas, você pode querer que o texto da lista em si não seja centralizado,
-       mas que o bloco da lista seja centralizado. */
+
     list-style: none;
     padding: 0;
-    margin: 0 auto 20px auto; /* NOVO: Centraliza o bloco da lista */
-    max-width: 90%; /* NOVO: Opcional, para limitar a largura da lista em telas maiores */
+    margin: 0 auto 20px auto; 
+    max-width: 90%;
 }
 
 .modal-content ul li {
-    /* ... seus estilos existentes para os itens da lista ... */
-    text-align: left; /* NOVO: Garante que o texto dos itens da lista esteja alinhado à esquerda */
+    text-align: left; 
 }
-
-/* ------------------------------------- */
-/* MEDIA QUERIES PARA RESPONSIVIDADE DO MODAL */
-/* ------------------------------------- */
 @media (max-width: 768px) {
     .modal-content {
         width: 95%;
         padding: 20px;
-        /* text-align: center; já deve vir do estilo principal se aplicado acima */
+
     }
     .modal-content h2 {
         font-size: 1.6rem;
-        /* text-align: center; já deve ser o padrão aqui */
+
     }
     .modal-content h3 {
         font-size: 1.1rem;
-        /* text-align: center; já deve ser o padrão aqui */
+    
     }
     .modal-content p, .modal-content ul li {
         font-size: 0.95em;
@@ -951,14 +927,14 @@ footer {
     .modal-contact-btn {
         padding: 12px 20px;
         font-size: 1em;
-        width: 80%; /* NOVO: Faz o botão ocupar mais largura em mobile */
-        max-width: 300px; /* NOVO: Limita a largura máxima do botão */
-        margin: 0 auto; /* Garante que o botão fique centralizado */
+        width: 80%; 
+        max-width: 300px; 
+        margin: 0 auto; 
     }
     .modal-content ul {
-        margin-left: auto; /* Garante centralização do bloco da lista */
+        margin-left: auto; 
         margin-right: auto;
-        /* Se você já usou margin: 0 auto para .modal-content ul, não precisa repetir aqui */
+
     }
 }
 
@@ -978,6 +954,6 @@ footer {
         font-size: 1rem;
     }
     .modal-contact-btn {
-        width: 90%; /* NOVO: Botão ainda maior em telas muito pequenas */
+        width: 90%; 
     }
 }
