@@ -1,203 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soluções de Aluguel - BCJ Impressoras</title>
-  <link rel="icon" href="assets/logo..bcj.png" type="image/png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-
-<link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Soluções de Aluguel - BCJ Impressoras</title>
+    <link rel="icon" href="assets/logo..bcj.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
-<a href="/" class="back-btn">Voltar ao Site Principal</a>
+    <header>
+        <a href="/" class="back-btn">Voltar ao Site Principal</a>
+        <img src="assets/logo..bcj.png" alt="Logo BCJ">
+        <h1> Soluções de Aluguel</h1>
+        <p>Impressoras profissionais com suporte completo e manutenção inclusa</p>
+        <button class="toggle-btn" onclick="document.getElementById('impressoras').scrollIntoView({ behavior: 'smooth', block: 'start' })">Ver Impressoras</button>
+    </header>
 
-    <img src="assets/logo..bcj.png" alt="Logo BCJ">
-    <h1> Soluções de Aluguel</h1>
-    <p>Impressoras profissionais com suporte completo e manutenção inclusa</p>
-    <button class="toggle-btn" onclick="document.getElementById('impressoras').scrollIntoView({ behavior: 'smooth' })">Ver Impressoras</button>
-  </header>
+    <nav>
+        <a href="#impressoras">Impressoras</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#planos">Planos</a>
+        <a href="#contato">Contato</a>
+    </nav>
 
-  <nav>
-    <a href="#impressoras">Impressoras</a>
-    <a href="#vantagens">Vantagens</a>
-    <a href="#planos">Planos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+    <section id="impressoras">
+        <h2>Impressoras Disponíveis para Aluguel</h2>
+        <p>Equipamentos modernos e confiáveis para atender às necessidades do seu negócio, com suporte técnico especializado e manutenção preventiva inclusa.</p>
 
-  <section id="impressoras">
-    <h2>Impressoras Disponíveis para Aluguel</h2>
-    <p>Equipamentos modernos e confiáveis para atender às necessidades do seu negócio, com suporte técnico especializado e manutenção preventiva inclusa.</p>
-    
-    <div class="cards">
-      <div class="card" onclick="showDetails('HP LaserJet Pro M404')">
-        <img src="https://gestpar.tomazzoni.net/wp-content/uploads/2020/03/HPLaserJetProM404dw-1.png" alt="HP LaserJet Pro M404">
-        <h3>HP LaserJet Pro M404</h3>
-        <p>Impressão rápida e confiável, ideal para ambientes corporativos de médio porte. Velocidade de até 38 ppm com qualidade profissional.</p>
-        <button class="btn-detalhes">Ver Detalhes</button>
-      </div>
+        <div class="cards">
+            <div class="card" data-printer-name="HP LaserJet Pro M404">
+                <img src="assets/HP laser jet.jpg" alt="HP LaserJet Pro M404">
+                <h3>HP LaserJet Pro M404</h3>
+                <p>Impressão rápida e confiável, ideal para ambientes corporativos de médio porte. Velocidade de até 38 ppm com qualidade profissional.</p>
+                <button class="btn-detalhes" onclick="showDetails('HP LaserJet Pro M404')">Ver Detalhes</button>
+            </div>
 
-      <div class="card" onclick="showDetails('Brother DCP-L2540DW')">
-        <img src="https://fujiokadistribuidor.vteximg.com.br/arquivos/ids/346360" alt="Brother DCP-L2540DW">
-        <h3>Brother DCP-L2540DW</h3>
-        <p>Multifuncional com Wi-Fi integrado. Imprime, copia e digitaliza com excelente qualidade. Perfeita para escritórios modernos.</p>
-        <button class="btn-detalhes">Ver Detalhes</button>
-      </div>
+            <div class="card" data-printer-name="Brother DCP-L2540DW">
+                <img src="https://fujiokadistribuidor.vteximg.com.br/arquivos/ids/346360" alt="Brother DCP-L2540DW">
+                <h3>Brother DCP-L2540DW</h3>
+                <p>Multifuncional com Wi-Fi integrado. Imprime, copia e digitaliza com excelente qualidade. Perfeita para escritórios modernos.</p>
+                <button class="btn-detalhes" onclick="showDetails('Brother DCP-L2540DW')">Ver Detalhes</button>
+            </div>
 
-      <div class="card" onclick="showDetails('Epson EcoTank L3250')">
-        <img src="https://m.media-amazon.com/images/I/51T-6cdhyaL.jpg" alt="Epson EcoTank L3250">
-        <h3>Epson EcoTank L3250</h3>
-        <p>Sistema de tanque de tinta com baixíssimo custo por página. Ideal para empresas com alta demanda de impressão colorida.</p>
-        <button class="btn-detalhes">Ver Detalhes</button>
-      </div>
+            <div class="card" data-printer-name="Epson EcoTank L3250">
+                <img src="https://m.media-amazon.com/images/I/51T-6cdhyaL.jpg" alt="Epson EcoTank L3250">
+                <h3>Epson EcoTank L3250</h3>
+                <p>Sistema de tanque de tinta com baixíssimo custo por página. Ideal para empresas com alta demanda de impressão colorida.</p>
+                <button class="btn-detalhes" onclick="showDetails('Epson EcoTank L3250')">Ver Detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="vantagens">
+        <h2>Vantagens do Aluguel</h2>
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon"><i class="fas fa-rocket"></i></span>
+                <h3>Instalação Rápida</h3>
+                <p>Configuração completa em até 24 horas com suporte técnico especializado</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon"><i class="fas fa-tools"></i></span>
+                <h3>Manutenção Inclusa</h3>
+                <p>Manutenção preventiva e corretiva sem custos adicionais</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon"><i class="fas fa-headset"></i></span>
+                <h3>Suporte 24/7</h3>
+                <p>Assistência técnica sempre disponível quando você precisar</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon"><i class="fas fa-dollar-sign"></i></span>
+                <h3>Economia Garantida</h3>
+                <p>Sem investimento inicial e custos previsíveis mensais</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos">
+        <h2>Nossos Planos</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Plano Básico</h3>
+                <p><strong>A partir de R$ 69/mês</strong></p>
+                <ul style="text-align: left; margin: 15px 0;">
+                    <li>Impressora EcoTank L3250</li>
+                    <li>Manutenção inclusa</li>
+                    <li>Suporte técnico</li>
+                    <li>Até 500 páginas/mês</li>
+                </ul>
+                <button class="btn-detalhes" onclick="contactPlan('Básico')">Contratar</button>
+            </div>
+
+            <div class="card">
+                <h3>Plano Profissional</h3>
+                <p><strong>A partir de R$ 79/mês</strong></p>
+                <ul style="text-align: left; margin: 15px 0;">
+                    <li>Brother DCP-L2540DW</li>
+                    <li>Multifuncional completo</li>
+                    <li>Wi-Fi integrado</li>
+                    <li>Até 1000 páginas/mês</li>
+                </ul>
+                <button class="btn-detalhes" onclick="contactPlan('Profissional')">Contratar</button>
+            </div>
+
+            <div class="card">
+                <h3>Plano Corporativo</h3>
+                <p><strong>A partir de R$ 89/mês</strong></p>
+                <ul style="text-align: left; margin: 15px 0;">
+                    <li>HP LaserJet Pro M404</li>
+                    <li>Alta velocidade (38 ppm)</li>
+                    <li>Conectividade completa</li>
+                    <li>Páginas ilimitadas</li>
+                </ul>
+                <button class="btn-detalhes" onclick="contactPlan('Corporativo')">Contratar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <p>Estamos prontos para te ajudar com as melhores soluções em impressoras e computadores!</p>
+
+        <div class="contato-info">
+            <p>
+                <a href="mailto:ballyhoocopiadoras@gmail.com" target="_blank" rel="noopener noreferrer" class="contato-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                    </svg>
+                    <strong>Email:</strong> ballyhoocopiadoras@gmail.com
+                </a>
+            </p>
+            <p>
+                <a href="tel:+551150681370" class="contato-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.06 1.06 2.45 1.64 3.88 1.64s2.82-.58 3.88-1.64l-2.12-2.12c-.78.78-1.81 1.21-2.88 1.21s-2.11-.43-2.88-1.21l-2.12 2.12zM18 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6V6h12v12z"/>
+                    </svg>
+                    <strong>Telefone:</strong> +55 (11) 5068-1370
+                </a>
+            </p>
+            <p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sussurana,+103+-+Ipiranga,+São+Paulo+-+SP,+CEP:+04281-070" target="_blank" rel="noopener noreferrer" class="contato-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4V7z"/>
+                    </svg>
+                    <strong>Endereço:</strong> Rua Sussurana, 103 - Ipiranga, São Paulo - SP, CEP: 04281-070
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 BCJ Impressoras - Soluções de Aluguel | Todos os direitos reservados</p>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send/?phone=551150681370&text=Olá! Gostaria de saber mais sobre as soluções de aluguel de impressoras.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <a href="https://www.instagram.com/bcj.impressoras/" class="instagram-float" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+
+    <div id="printerDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2 id="modalPrinterName"></h2>
+            <p id="modalIdealFor"></p>
+            <h3>Saiba mais!</h3>
+            <ul id="modalFeatures"></ul>
+            <p id="modalPrice"></p>
+            <button class="modal-contact-btn" onclick="contactPlan('modeloEspecifico')">Fale Conosco para Alugar</button>
+        </div>
     </div>
-  </section>
-
-  <section id="vantagens">
-    <h2>Vantagens do Aluguel</h2>
-    <div class="features">
-      <div class="feature">
-        <span class="feature-icon"><i class="fas fa-rocket"></i></span>
-        <h3>Instalação Rápida</h3>
-        <p>Configuração completa em até 24 horas com suporte técnico especializado</p>
-      </div>
-      <div class="feature">
-        <span class="feature-icon"><i class="fas fa-tools"></i></span>
-        <h3>Manutenção Inclusa</h3>
-        <p>Manutenção preventiva e corretiva sem custos adicionais</p>
-      </div>
-      <div class="feature">
-        <span class="feature-icon"><i class="fas fa-headset"></i></span>
-        <h3>Suporte 24/7</h3>
-        <p>Assistência técnica sempre disponível quando você precisar</p>
-      </div>
-      <div class="feature">
-        <span class="feature-icon"><i class="fas fa-dollar-sign"></i></span>
-        <h3>Economia Garantida</h3>
-        <p>Sem investimento inicial e custos previsíveis mensais</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="planos">
-    <h2>Nossos Planos</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Plano Básico</h3>
-        <p><strong>A partir de R$ 69/mês</strong></p>
-        <ul style="text-align: left; margin: 15px 0;">
-          <li>Impressora EcoTank L3250</li>
-          <li>Manutenção inclusa</li>
-          <li>Suporte técnico</li>
-          <li>Até 500 páginas/mês</li>
-        </ul>
-        <button class="btn-detalhes" onclick="contactPlan('Básico')">Contratar</button>
-      </div>
-
-      <div class="card">
-        <h3>Plano Profissional</h3>
-        <p><strong>A partir de R$ 79/mês</strong></p>
-        <ul style="text-align: left; margin: 15px 0;">
-          <li>Brother DCP-L2540DW</li>
-          <li>Multifuncional completo</li>
-          <li>Wi-Fi integrado</li>
-          <li>Até 1000 páginas/mês</li>
-        </ul>
-        <button class="btn-detalhes" onclick="contactPlan('Profissional')">Contratar</button>
-      </div>
-
-      <div class="card">
-        <h3>Plano Corporativo</h3>
-        <p><strong>A partir de R$ 89/mês</strong></p>
-        <ul style="text-align: left; margin: 15px 0;">
-          <li>HP LaserJet Pro M404</li>
-          <li>Alta velocidade (38 ppm)</li>
-          <li>Conectividade completa</li>
-          <li>Páginas ilimitadas</li>
-        </ul>
-        <button class="btn-detalhes" onclick="contactPlan('Corporativo')">Contratar</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>
-        <a href="mailto:ballyhoocopiadoras@gmail.com" target="_blank" rel="noopener noreferrer" class="contato-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
-                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-            </svg>
-            Email: ballyhoocopiadoras@gmail.com
-        </a>
-    </p>
-    <p>
-        <a href="tel:+551150681370" class="contato-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
-                <path d="M6.62 10.79c1.06 1.06 2.45 1.64 3.88 1.64s2.82-.58 3.88-1.64l-2.12-2.12c-.78.78-1.81 1.21-2.88 1.21s-2.11-.43-2.88-1.21l-2.12 2.12zM18 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6V6h12v12z"/>
-            </svg>
-            Telefone: +55 (11) 5068-1370
-        </a>
-    </p>
-    <p>
-        <a href="https://www.google.com/maps/place/Rua+Sussurana,+103+-+Ipiranga,+S%C3%A3o+Paulo+-+SP,+04281-070/@-23.603123,-46.606123,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5b2f8c8e7d9:0x7f8c8e7d9f8c8e7d!8m2!3d-23.603123!4d-46.604934!16s%2Fg%2F11c1q5l5v" target="_blank" rel="noopener noreferrer" class="contato-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4V7z"/>
-            </svg>
-            <i>Localização:</i> Rua Sussurana, 103 - Ipiranga, São Paulo - SP, CEP: 04281-070
-        </a>
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 BCJ Impressoras - Soluções de Aluguel | Todos os direitos reservados</p>
-  </footer>
-
-  <a href="https://api.whatsapp.com/send/?phone=551150681370&text=Olá! Gostaria de saber mais sobre as soluções de aluguel de impressoras.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-  </a>
-
-  <a href="https://www.instagram.com/bcj.impressoras/" class="instagram-float" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-  </a>
-
     <script>
-        function showDetails(printerName) {
-            const details = {
-                'HP LaserJet Pro M404': {
-                    features: ['Velocidade: 38 páginas por minuto', 'Resolução: 4800 x 600 dpi', 'Conectividade: Wi-Fi, USB, Ethernet', 'Memória: 256 MB', 'Duplex automático', 'Bandeja: 250 folhas'],
-                    price: 'A partir de R$ 89/mês',
-                    ideal: 'Ideal para: Escritórios corporativos com alta demanda'
-                },
-                'Brother DCP-L2540DW': {
-                    features: ['Multifuncional 3 em 1', 'Wi-Fi integrado', 'Impressão duplex automática', 'Tela LCD de 2 linhas', 'Velocidade: 26 ppm', 'Scanner colorido'],
-                    price: 'A partir de R$ 79/mês',
-                    ideal: 'Ideal para: Escritórios pequenos e médios'
-                },
-                'Epson EcoTank L3250': {
-                    features: ['Sistema EcoTank (tanque de tinta)', 'Impressão colorida de alta qualidade', 'Wi-Fi Direct', 'Baixíssimo custo por página', 'Multifuncional', 'Até 4.500 páginas em preto'],
-                    price: 'A partir de R$ 69/mês',
-                    ideal: 'Ideal para: Alta demanda de impressão colorida'
-                }
-            };
+        // Dados das impressoras - CENTRALIZADOS AQUI
+        const printerDetails = {
+            'HP LaserJet Pro M404': {
+                features: ['Velocidade: 38 páginas por minuto', 'Resolução: 4800 x 600 dpi', 'Conectividade: Wi-Fi, USB, Ethernet', 'Memória: 256 MB', 'Duplex automático', 'Bandeja: 250 folhas'],
+                price: 'A partir de R$ 89/mês',
+                ideal: 'Ideal para: Escritórios corporativos com alta demanda'
+            },
+            'Brother DCP-L2540DW': {
+                features: ['Multifuncional 3 em 1 (Impressão, Cópia, Digitalização)', 'Wi-Fi integrado e Ethernet', 'Impressão duplex automática', 'Tela LCD de 2 linhas', 'Velocidade: 26 ppm', 'Scanner colorido', 'Alimentador automático de documentos (ADF)'],
+                price: 'A partir de R$ 79/mês',
+                ideal: 'Ideal para: Escritórios pequenos e médios, home office'
+            },
+            'Epson EcoTank L3250': {
+                features: ['Sistema EcoTank (tanque de tinta de alta capacidade)', 'Impressão colorida de alta qualidade', 'Wi-Fi Direct', 'Baixíssimo custo por página (até 4.500 páginas em preto, 7.500 coloridas)', 'Multifuncional (Impressão, Cópia, Digitalização)', 'Design compacto'],
+                price: 'A partir de R$ 69/mês',
+                ideal: 'Ideal para: Alta demanda de impressão colorida e economia'
+            }
+        };
 
-            const printer = details[printerName];
+        // Referências aos elementos do modal
+        const modal = document.getElementById('printerDetailsModal');
+        const closeButton = document.querySelector('.close-button');
+        const modalPrinterName = document.getElementById('modalPrinterName');
+        const modalIdealFor = document.getElementById('modalIdealFor');
+        const modalFeatures = document.getElementById('modalFeatures');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalContactBtn = document.querySelector('.modal-contact-btn');
+
+        // Função para exibir os detalhes da impressora no modal
+        function showDetails(printerName) {
+            const printer = printerDetails[printerName];
             if (printer) {
-                alert(`${printerName}\n\n${printer.ideal}\n\nCaracterísticas principais:\n• ${printer.features.join('\n• ')}\n\n💰 ${printer.price}\n\n📞 Entre em contato para mais informações e condições especiais!`);
+                modalPrinterName.textContent = printerName;
+                modalIdealFor.textContent = printer.ideal;
+
+                modalFeatures.innerHTML = ''; // Limpa a lista anterior
+                printer.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    modalFeatures.appendChild(li);
+                });
+
+                modalPrice.textContent = printer.price;
+                
+                // Atualiza o link do botão de contato no modal
+                modalContactBtn.onclick = () => contactPlan(`Aluguel de ${printerName}`);
+
+                modal.style.display = 'flex'; // Exibe o modal (usando flex para centralização)
+                document.body.style.overflow = 'hidden'; // Evita scroll da página principal
             }
         }
-        function contactPlan(planName) {
-            const message = `Olá! Tenho interesse no Plano ${planName} de aluguel de impressoras. Gostaria de receber mais informações sobre valores e condições.`;
+
+        // Função para fechar o modal
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Restaura scroll da página principal
+        }
+
+        // Event Listeners para fechar o modal
+        closeButton.addEventListener('click', closeModal);
+
+        // Fecha o modal ao clicar fora do conteúdo do modal
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                closeModal();
+            }
+        });
+
+        // Função existente para contatar o plano (com pequena alteração)
+        function contactPlan(planNameOrPrinterName) {
+            const message = `Olá! Tenho interesse em saber mais sobre ${planNameOrPrinterName}. Gostaria de receber mais informações sobre valores e condições.`;
             const whatsappUrl = `https://wa.me/551150681370?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
 
-        function goBack() {
-            if (confirm('Deseja retornar ao site principal da BCJ Impressoras?')) {
-                window.location.href = 'index.html';
-            }
-        }
-
+        // Código existente para observador de interseção
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -212,14 +265,25 @@
             observer.observe(el);
         });
 
+        // Código existente para delay de transição dos cards (ajustado para DOMContentLoaded)
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card');
             cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.transitionDelay = `${index * 0.1}s`;
-                }, 100);
+                // Aplica delay apenas para cards que não são botões de contratação (ex: cards de impressoras)
+                // Isso evita conflito com os cards de plano no final que já tem onclick no botão
+                if (card.querySelector('.btn-detalhes')) { // Verifica se tem um botão de detalhes dentro
+                     card.style.transitionDelay = `${index * 0.1}s`;
+                }
             });
+
+            // Adiciona um evento para o botão "Ver Impressoras" no header para rolar corretamente
+            const verImpressorasBtn = document.querySelector('header .toggle-btn');
+            if (verImpressorasBtn) {
+                verImpressorasBtn.onclick = function() {
+                    document.getElementById('impressoras').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                };
+            }
         });
     </script>
-</body>
+    </body>
 </html>

@@ -10,33 +10,33 @@
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
+<header>
     <img src="assets/logo..bcj.png" alt="Logo BCJ">
     <h1><i class="fas fa-tools"></i> BCJ Impressoras</h1>
     <p>Especialistas em conserto e manutenção de impressoras e computadores</p>
-    <button class="toggle-btn" onclick="document.getElementById('sobre').scrollIntoView({ behavior: 'smooth' })">Iniciar</button>
-  </header>
+    <button class="toggle-btn" onclick="document.getElementById('sobre').scrollIntoView({ behavior: 'smooth', block: 'start' })">Iniciar</button>
+</header>
 
-  <nav>
+<nav>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
     <a href="#aluguel">Aluguel</a>
     <a href="#contato">Contato</a>
-    <a href="devs.html">Desenvolvedores</a> 
-  </nav>
+    <a href="devs.html">Desenvolvedores</a>
+</nav>
 
-  <section id="Sobre">
+<section id="sobre">
     <h2>Sobre Nós</h2>
     <p>
-      Uma empresa focada na prestação de serviços de manutenção preventiva e corretiva em equipamentos de informática, é especializada em soluções de outsourcing de impressão, oferecendo serviços completos para a gestão eficiente de parques de impressão corporativo.
+        Uma empresa focada na prestação de serviços de manutenção preventiva e corretiva em equipamentos de informática, é especializada em soluções de outsourcing de impressão, oferecendo serviços completos para a gestão eficiente de parques de impressão corporativo.
     </p>
     <p>
-      Atuamos com foco na redução de custos, aumento da produtividade e sustentabilidade, por meio da terceirização de equipamentos, suprimentos, manutenção e monitoramento remoto.
+        Atuamos com foco na redução de custos, aumento da produtividade e sustentabilidade, por meio da terceirização de equipamentos, suprimentos, manutenção e monitoramento remoto.
     </p>
     <p>
-      Com tecnologia de ponta, suporte técnico ágil e consultoria personalizada, ajudamos empresas de todos os portes a otimizarem seus processos de impressão e digitalização de documentos. Nosso compromisso é garantir maior controle, segurança da informação e eficiência operacional para que nossos clientes possam concentrar seus recursos em atividades estratégicas do negócio.
+        Com tecnologia de ponta, suporte técnico ágil e consultoria personalizada, ajudamos empresas de todos os portes a otimizarem seus processos de impressão e digitalização de documentos. Nosso compromisso é garantir maior controle, segurança da informação e eficiência operacional para que nossos clientes possam concentrar seus recursos em atividades estratégicas do negócio.
     </p>
-  </section>
+</section>
 
 
   <section id="quem-somos" class="visible">
@@ -98,31 +98,36 @@
 
 
   <section id="contato">
-    <h2>Contato</h2>
-    <p>
+    <h2>Fale Conosco</h2>
+    <p>Estamos prontos para te ajudar com as melhores soluções em impressoras e computadores!</p>
+
+    <div class="contato-info">
+      <p>
         <a href="mailto:ballyhoocopiadoras@gmail.com" target="_blank" rel="noopener noreferrer" class="contato-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
-                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-            </svg>
-            Email: ballyhoocopiadoras@gmail.com
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+          </svg>
+          <strong>Email:</strong> ballyhoocopiadoras@gmail.com
         </a>
-    </p>
-    <p>
+      </p>
+      <p>
         <a href="tel:+551150681370" class="contato-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
-                <path d="M6.62 10.79c1.06 1.06 2.45 1.64 3.88 1.64s2.82-.58 3.88-1.64l-2.12-2.12c-.78.78-1.81 1.21-2.88 1.21s-2.11-.43-2.88-1.21l-2.12 2.12zM18 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6V6h12v12z"/>
-            </svg>
-            Telefone: +55 (11) 5068-1370
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M6.62 10.79c1.06 1.06 2.45 1.64 3.88 1.64s2.82-.58 3.88-1.64l-2.12-2.12c-.78.78-1.81 1.21-2.88 1.21s-2.11-.43-2.88-1.21l-2.12 2.12zM18 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H6V6h12v12z"/>
+          </svg>
+          <strong>Telefone:</strong> +55 (11) 5068-1370
         </a>
-    </p>
-    <p>
-        <a href="https://www.google.com/maps/place/Rua+Sussurana,+103+-+Ipiranga,+S%C3%A3o+Paulo+-+SP,+04281-070/@-23.603123,-46.606123,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5b2f8c8e7d9:0x7f8c8e7d9f8c8e7d!8m2!3d-23.603123!4d-46.604934!16s%2Fg%2F11c1q5l5v" target="_blank" rel="noopener noreferrer" class="contato-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4V7z"/>
-            </svg>
-            <i>Localização:</i> Rua Sussurana, 103 - Ipiranga, São Paulo - SP, CEP: 04281-070
+      </p>
+      <p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sussurana,+103+-+Ipiranga,+São+Paulo+-+SP,+CEP:+04281-070" target="_blank" rel="noopener noreferrer" class="contato-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4V7z"/>
+          </svg>
+          <strong>Endereço:</strong> Rua Sussurana, 103 - Ipiranga, São Paulo - SP, CEP: 04281-070
         </a>
-    </p>
+      </p>
+    </div>
+  </section>
   </section>
 
   <footer>
