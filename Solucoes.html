@@ -175,7 +175,6 @@
         </div>
     </div>
     <script>
-        // Dados das impressoras - CENTRALIZADOS AQUI
         const printerDetails = {
             'HP LaserJet Pro M404': {
                 features: ['Velocidade: 38 páginas por minuto', 'Resolução: 4800 x 600 dpi', 'Conectividade: Wi-Fi, USB, Ethernet', 'Memória: 256 MB', 'Duplex automático', 'Bandeja: 250 folhas'],
@@ -194,7 +193,6 @@
             }
         };
 
-        // Referências aos elementos do modal
         const modal = document.getElementById('printerDetailsModal');
         const closeButton = document.querySelector('.close-button');
         const modalPrinterName = document.getElementById('modalPrinterName');
@@ -203,14 +201,13 @@
         const modalPrice = document.getElementById('modalPrice');
         const modalContactBtn = document.querySelector('.modal-contact-btn');
 
-        // Função para exibir os detalhes da impressora no modal
         function showDetails(printerName) {
             const printer = printerDetails[printerName];
             if (printer) {
                 modalPrinterName.textContent = printerName;
                 modalIdealFor.textContent = printer.ideal;
 
-                modalFeatures.innerHTML = ''; // Limpa a lista anterior
+                modalFeatures.innerHTML = ''; 
                 printer.features.forEach(feature => {
                     const li = document.createElement('li');
                     li.textContent = feature;
@@ -219,38 +216,28 @@
 
                 modalPrice.textContent = printer.price;
                 
-                // Atualiza o link do botão de contato no modal
                 modalContactBtn.onclick = () => contactPlan(`Aluguel de ${printerName}`);
 
-                modal.style.display = 'flex'; // Exibe o modal (usando flex para centralização)
-                document.body.style.overflow = 'hidden'; // Evita scroll da página principal
+                modal.style.display = 'flex'; 
+                document.body.style.overflow = 'hidden'; 
             }
         }
-
-        // Função para fechar o modal
         function closeModal() {
             modal.style.display = 'none';
-            document.body.style.overflow = ''; // Restaura scroll da página principal
+            document.body.style.overflow = ''; 
         }
-
-        // Event Listeners para fechar o modal
         closeButton.addEventListener('click', closeModal);
-
-        // Fecha o modal ao clicar fora do conteúdo do modal
         window.addEventListener('click', (event) => {
             if (event.target == modal) {
                 closeModal();
             }
         });
-
-        // Função existente para contatar o plano (com pequena alteração)
         function contactPlan(planNameOrPrinterName) {
             const message = `Olá! Tenho interesse em saber mais sobre ${planNameOrPrinterName}. Gostaria de receber mais informações sobre valores e condições.`;
             const whatsappUrl = `https://wa.me/551150681370?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
 
-        // Código existente para observador de interseção
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -265,18 +252,14 @@
             observer.observe(el);
         });
 
-        // Código existente para delay de transição dos cards (ajustado para DOMContentLoaded)
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card');
             cards.forEach((card, index) => {
-                // Aplica delay apenas para cards que não são botões de contratação (ex: cards de impressoras)
-                // Isso evita conflito com os cards de plano no final que já tem onclick no botão
-                if (card.querySelector('.btn-detalhes')) { // Verifica se tem um botão de detalhes dentro
+                if (card.querySelector('.btn-detalhes')) { 
                      card.style.transitionDelay = `${index * 0.1}s`;
                 }
             });
 
-            // Adiciona um evento para o botão "Ver Impressoras" no header para rolar corretamente
             const verImpressorasBtn = document.querySelector('header .toggle-btn');
             if (verImpressorasBtn) {
                 verImpressorasBtn.onclick = function() {

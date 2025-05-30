@@ -1,23 +1,17 @@
 /* style.css - Arquivo CSS Unificado para todas as páginas */
-
-/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos Globais do Body */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #000000;
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
-    /* Ajustado: Este padding-top serve para que o CONTEÚDO não seja coberto pela NAV quando ela fica sticky no topo. */
-    /* Você precisa MEDIR a altura da sua 'nav' (incluindo padding) e colocar aqui. */
-    /* Ex: se sua nav tem 50px de altura, use 50px ou 55px para folga. */
-    padding-top: 60px; /* <--- VERIFIQUE E AJUSTE ESTE VALOR COM A ALTURA REAL DA SUA BARRA DE NAVEGAÇÃO */
+    padding-top: 60px; 
 }
 
 /* ------------------------------------- */
@@ -33,15 +27,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* REMOVIDO: position: fixed, width, top, left, z-index - O header AGORA ROLA com a página */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Mantém a sombra para estética */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
 }
 
-/* Estilo específico para header da página de aluguel e devs (cores diferentes) */
+
 .header-aluguel-devs {
     background-color: #1a1a1a;
     border-bottom: 2px solid #333;
-    /* Este header também ROLA com a página, como no seu design original */
 }
 
 /* Estilo do botão "Voltar" (específico para páginas secundárias) */
@@ -61,7 +53,7 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
-    z-index: 1001; /* Garante que o botão volte esteja acima de tudo */
+    z-index: 1001;
 }
 
 .back-btn:hover {
@@ -79,27 +71,24 @@ header {
 header img {
     height: 80px;
     vertical-align: middle;
-    margin-right: 15px; /* Manter para desktop na página principal */
+    margin-right: 15px; 
 }
 
-/* Ajuste para o ícone fas fa-tools dentro do h1 */
 header h1 {
-    display: inline-flex; /* Use flexbox para alinhar ícone e texto */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 10px; /* Espaçamento entre o ícone e o texto */
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
     font-size: 2.5rem;
     margin-bottom: 10px;
     background: none;
     -webkit-text-fill-color: inherit;
-    color: white; /* Garante que a cor seja branca */
+    color: white;
 }
 
-/* Cor para o ícone fas fa-tools */
 header h1 .fas.fa-tools {
-    color: #007bff; /* Cor de destaque para o ícone */
+    color: #007bff;
 }
 
-/* Gradiente para h1 da página de aluguel/devs */
 .header-aluguel-devs h1 {
     background: linear-gradient(45deg, #fff, #f0f8ff);
     background-clip: text;
@@ -112,12 +101,10 @@ header p {
     color: #cccccc;
 }
 
-/* Cor do parágrafo do header da página de aluguel/devs */
 .header-aluguel-devs p {
     opacity: 0.9;
 }
 
-/* Botão "Iniciar" no Header da Página Principal */
 .toggle-btn {
     background: #333333;
     color: white;
@@ -379,7 +366,7 @@ h2 {
 .gif-container img {
     width: 100%;
     max-width: 280px;
-    height: 180px; /* Altura fixa para uniformidade nos gifs */
+    height: 180px;
     object-fit: cover;
     border-radius: 6px;
     opacity: 0;
@@ -402,7 +389,6 @@ ul {
     color: #cccccc;
 }
 
-/* Listas sem marcadores para tech-stack e dev-contact */
 .tech-stack ul, .dev-contact ul {
     list-style: none;
     padding: 0;
@@ -432,7 +418,6 @@ footer {
     border-top: 1px solid #333333;
 }
 
-/* Footer da página de aluguel e devs (padding e margin-top diferentes) */
 .footer-aluguel-devs {
     padding: 30px 20px;
     margin-top: 60px;
@@ -463,7 +448,6 @@ footer {
     background-color: #555555;
 }
 
-/* WhatsApp Float para página de aluguel e devs */
 .whatsapp-float-aluguel-devs {
     background-color: #25D366;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
@@ -495,7 +479,6 @@ footer {
     background-color: #555555;
 }
 
-/* Instagram Float para página de aluguel e devs */
 .instagram-float-aluguel-devs {
     background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
     box-shadow: 0 4px 15px rgba(188, 24, 136, 0.4);
@@ -640,7 +623,7 @@ footer {
     header img { height: 60px; }
     header h1 { font-size: 2.2rem; gap: 8px;}
     
-    nav { top: 0; gap: 15px;} /* A nav continua grudando no topo, sem offset */
+    nav { top: 0; gap: 15px;}
     
     section { margin: 50px auto; padding: 30px 15px; }
     h2 { font-size: 1.8rem; }
@@ -663,11 +646,9 @@ footer {
     .whatsapp-float img, .instagram-float img { width: 30px; height: 30px; }
 }
 
-/* Para telas de até 768px (tablets e smartphones grandes) */
 @media (max-width: 768px) {
-    /* back-btn (só em páginas secundárias) */
     .back-btn {
-        position: static; /* Volta a ser estático para não ficar solto em mobile */
+        position: static; 
         margin: 20px auto 0;
         width: fit-content;
         display: block;
@@ -691,7 +672,7 @@ footer {
         flex-direction: column;
         gap: 0;
         padding: 0;
-        top: 0; /* A nav continua grudando no topo, sem offset */
+        top: 0; 
     }
     nav a { 
         font-size: 1rem; 
@@ -718,7 +699,6 @@ footer {
     }
     .gif-container img { max-width: 100%; height: 150px; }
 
-    /* Centraliza o texto dentro dos cards */
     .card p, .card-aluguel p, .dev-card p, .feature p {
         text-align: center;
     }
@@ -734,7 +714,6 @@ footer {
     footer { font-size: 0.8rem; padding: 20px 15px; }
 }
 
-/* Para telas de até 480px (smartphones pequenos) */
 @media (max-width: 480px) {
     header h1 { font-size: 1.6rem; }
     header p { font-size: 0.85rem; }
@@ -753,25 +732,25 @@ footer {
 }
 
 .modal {
-    display: none; /* Escondido por padrão */
-    position: fixed; /* Fixo na tela */
-    z-index: 10000; /* Acima de todo o resto */
+    display: none;
+    position: fixed;
+    z-index: 10000; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Permite scroll se o conteúdo for grande */
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
-    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
-    display: flex; /* Para centralizar o conteúdo do modal */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    animation: fadeInModal 0.3s ease-out; /* Animação ao abrir */
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px); 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    animation: fadeInModal 0.3s ease-out; 
 }
 
 .modal-content {
-    background-color: #1a1a1a; /* Fundo escuro do modal */
-    margin: auto; /* Centraliza com display block */
+    background-color: #1a1a1a;
+    margin: auto; 
     padding: 30px;
     border: 1px solid #333333;
     border-radius: 12px;
